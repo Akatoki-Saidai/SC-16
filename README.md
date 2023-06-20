@@ -13,11 +13,11 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
 *ほかの人が作業して、SC-16の中身が変更されたら、git pull で変更点を自分のパソコンに反映できる。
 *add や commit , push の取り消し方は一番上のURLを参照   
 # branch
-## branchとは
+### branchとは
 git には、mainで開発しているプログラムに試験的に、機能を追加したいとき、別の作業場所を作れる。こうすることで、mainでの開発を妨げることなく、新しい機能の開発などができる。イメージつかなかったら、
 https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%A8%E3%81%AF  
 を参照
-## branchの使い方
+### branchの使い方
 1.コマンドラインを開いて、cd SC-16 と入力   
 2.git branch ブランチ名 を入力して、ブランチの作成   
 3.git checkout ブランチ名 で作成したブランチに切り替え  
