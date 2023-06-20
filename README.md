@@ -1,5 +1,4 @@
-# SC-16
-SC-16  
+# SC-16 
 git コマンドを忘れたり、探したいときは参照   
 https://qiita.com/kohga/items/dccf135b0af395f69144
 # git コマンドの使い方
