@@ -1,4 +1,6 @@
 # SC-16 
+![RP2040のピン配置(出典元:https://blog.artifactnoise.com/raspberrypi-piconodetashitowodu-ndemiru1-artifactnoise.html)](https://blog.artifactnoise.com/images/2022-01-05_012048.png)  
+![Picoのピン配置(出典元:https://tanuki-bayashin.hatenablog.com/entry/2022/10/09/123554)](https://cdn-ak.f.st-hatena.com/images/fotolife/T/Tanuki_Bayashin/20221008/20221008232305.png) 
 git コマンドを忘れたり、探したいときは参照   
 https://qiita.com/kohga/items/dccf135b0af395f69144
 # git コマンドの使い方
