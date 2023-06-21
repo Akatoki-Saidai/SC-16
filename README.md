@@ -1,8 +1,12 @@
 # SC-16 
 ![RP2040のピン配置(出典元:https://blog.artifactnoise.com/raspberrypi-piconodetashitowodu-ndemiru1-artifactnoise.html)](https://blog.artifactnoise.com/images/2022-01-05_012048.png)  
-![Picoのピン配置(出典元:https://tanuki-bayashin.hatenablog.com/entry/2022/10/09/123554)](https://cdn-ak.f.st-hatena.com/images/fotolife/T/Tanuki_Bayashin/20221008/20221008232305.png) 
+![Picoのピン配置(出典元:https://tanuki-bayashin.hatenablog.com/entry/2022/10/09/123554)](https://cdn-ak.f.st-hatena.com/images/fotolife/T/Tanuki_Bayashin/20221008/20221008232305.png)  
 git コマンドを忘れたり、探したいときは参照   
-https://qiita.com/kohga/items/dccf135b0af395f69144
+https://qiita.com/kohga/items/dccf135b0af395f69144  
+# プログラムの書き方
+1.「センサ名 プログラム 」や 「センサ名 Pico」などで検索  
+2.エラーと戦う  
+* わからないことがあったら上級生に聞こう
 # git コマンドの使い方
 1.コマンドラインを開く(検索バーで cmd とうつ)  
 2.git clone https://github.com/Akatoki-Saidai/SC-16.git と入力でフォルダがダウンロードされる  
