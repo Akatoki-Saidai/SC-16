@@ -12,7 +12,7 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
 3.git commit -f "何かメッセージ書く(何を作成、変更したか)"    
 4.git push origin main とうつ  
 *ほかの人が作業して、SC-16の中身が変更されたら、git pull で変更点を自分のパソコンに反映できる。
-*add や commit , push の取り消し方は一番上のURLを参照   
+* add や commit , push の取り消し方は一番上のURLを参照   
 # branch
 ### branchとは
 git には、mainで開発しているプログラムに試験的に、機能を追加したいとき、別の作業場所を作れる。こうすることで、mainでの開発を妨げることなく、新しい機能の開発などができる。イメージつかなかったら、
@@ -23,6 +23,6 @@ https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81
 2.git branch ブランチ名 を入力して、ブランチの作成   
 3.git checkout ブランチ名 で作成したブランチに切り替え  
 4.あとは上記の使い方のように作業する  
-*git branch で、どんなbranchがあって、今自分がどこのbranchで作業しているかわかる。
+* git branch で、どんなbranchがあって、今自分がどこのbranchで作業しているかわかる。
 # エラー  
 error: failed to push some refs to 'https://github.com/Akatoki-Saidai/SC-16.git' と表示されて、push できなかったら、上げたいファイルを他の場所に避難させた後に、git pull を行い、その後ファイルを元の場所に戻し、push を行う
