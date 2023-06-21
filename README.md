@@ -24,3 +24,5 @@ https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81
 3.git checkout ブランチ名 で作成したブランチに切り替え  
 4.あとは上記の使い方のように作業する  
 *git branch で、どんなbranchがあって、今自分がどこのbranchで作業しているかわかる。
+# エラー  
+error: failed to push some refs to 'https://github.com/Akatoki-Saidai/SC-16.git' と表示されて、push できなかったら、上げたいファイルを他の場所に避難させた後に、git pull を行い、その後ファイルを元の場所に戻し、push を行う
