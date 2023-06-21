@@ -11,7 +11,7 @@ https://qiita.com/kohga/items/dccf135b0af395f69144
 2.git add .  と入力(1つのファイルだけアップロードしたかったら、git add ファイル名)   
 3.git commit -f "何かメッセージ書く(何を作成、変更したか)"    
 4.git push origin main とうつ  
-*ほかの人が作業して、SC-16の中身が変更されたら、git pull で変更点を自分のパソコンに反映できる。
+* ほかの人が作業して、SC-16の中身が変更されたら、git pull で変更点を自分のパソコンに反映できる。
 * add や commit , push の取り消し方は一番上のURLを参照   
 # branch
 ### branchとは
