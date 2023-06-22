@@ -4,7 +4,7 @@ from machine import Pin, SPI
 import utime
 import os, sdcard
 
-spi = SPI(0,baudrate=115200)
+spi = SPI(0,baudrate=115200,sck=Pin(2),mosi=Pin(3),miso=Pin(4))
 print(spi)
 print(Pin(2))
 print(Pin(3))
