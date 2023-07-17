@@ -16,7 +16,7 @@ class GPS():
         tm_last = 0
         satellites = dict()
         satellites_used = dict()
-        utime.sleep_ms(100)
+        utime.sleep_ms(300)
         len = self.gps_s.any()
         if len>0:
             b = self.gps_s.read(len)
@@ -33,7 +33,7 @@ class GPS():
         
                             data1 = self.gps.latitude[0]
                             data2 = self.gps.longitude[0]
-                            print(f'lat:{self.gps.latitude[0]},long:{self.gps.longitude[0]}')
+                            #print(f'lat:{self.gps.latitude[0]},long:{self.gps.longitude[0]}')
                             return data1,data2
     def cal_x_y(self,lat,lon):
         gol_lat = 35.862734
@@ -90,7 +90,8 @@ class GPS():
 
         distance = sqrt(pow(m * lat_difference, 2) + pow(n * lon_difference * cos(lat_average), 2)) # 距離計測
 
-        print(distance)#m kmにしたいなら/1000して
+        #print(distance)#m kmにしたいなら/1000して
+        return distance
         
     def cal_azimuth(self,goal_lat, goal_long, lat, long):#出てくる値は国土地理院のと比べると3度くらい多く出た
         # Radian角に修正
@@ -110,10 +111,11 @@ class GPS():
 if __name__ == '__main__':
     while True:
         try:
-            goal_lat = 35.8644135
-            goal_long = 139.6093613
+            goal_lat = 35.8627962
+            goal_long = 139.6071776
             gps = GPS()
             data1,data2 = gps.GPSwatch()
+            print(data1,data2)
             print(gps.cal_azimuth(goal_lat,goal_long,data1,data2))
             gps.cal_distance(goal_lat,goal_long,data1,data2)
         except TypeError:
