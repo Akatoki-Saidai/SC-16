@@ -7,7 +7,7 @@ class Cansat():
         self.long_range = LongRange()
         self.short_range = ShortRange()
     def run(self):
-        self.long_range.falling()     
+        #self.long_range.falling()     
         self.long_range.move_phase()
         utime.sleep(2)
         self.short_range.move_phase()
