@@ -7,6 +7,7 @@ from machine import Pin,I2C,UART,SPI,SoftI2C
 import utime
 import math
 import time
+
 class LongRange():
 
     def __init__(self):
@@ -89,8 +90,8 @@ class LongRange():
         return degree
     def move_phase(self):
         print("長距離フェーズに入ります")
-        goal_lat = 35.8627962
-        goal_long = 139.6071776
+        goal_lat = 35.86107
+        goal_long = 139.60703
         #self.card.write("--------------")
         #self.card.write(f"lat:{data1},long{data2}")
         #self.card.write(f"distance:{distance}")
@@ -100,28 +101,41 @@ class LongRange():
                 gps = GPS()
                 data1,data2 = gps.GPSwatch()
                 #print(f'lat:{data1},long:{data2}')
-                #print(data1,data2)
+                print(data1,data2)
                 #print(gps.cal_azimuth(goal_lat,goal_long,data1,data2))
                 #self.calculate_north_degree()
-                degree = self.degree_from_front_to_goal()
+                degree = abs(self.degree_from_front_to_goal())
                 print("degree:" ,degree)
                 distance = gps.cal_distance(goal_lat,goal_long,data1,data2)
                 print(f"distance:{distance}m")
             except TypeError:
                 continue
             if(distance > 10):#kmをmに直さないといけない
-                if(-45 <= heading <= 45):
+                if(degree <= 30):
                     self.motor.forward()
-                elif(heading > 45):
-                    self.motor.right()
-                elif(heading < -45):
+                elif(50>degree > 30):
                     self.motor.left()
+                elif(225 > degree > 200 ):
+                    self.motor.right()
+                elif(150 < degree < 200):
+                    self.motor.forward()
+                elif(50 < degree < 150):
+                    self.motor.right()
+                elif(225 < degree < 360):
+                    self.motor.left()
+                #elif(degree <)
+                    
                 else:
                     self.motor.back()
                 print("接近中")
             else:
                 print("近距離フェーズに入ります")
                 break
-if __name__ == '__main__':
-    cansat = LongRange()
-    cansat.move_phase()
+a = Pin(25,Pin.OUT)
+a.value(1)
+time.sleep(1)
+cansat = LongRange()
+a.value(0)
+time.sleep(1)
+a.value(1)
+cansat.move_phase()
