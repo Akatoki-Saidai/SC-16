@@ -8,6 +8,9 @@ import cv2
 
 from yolox.yolox_tflite import YoloxTFLite
 
+
+
+
 def main():
     # パラメータ #################################################################
     cap_device = 0
@@ -19,6 +22,11 @@ def main():
     score_th = 0.7
     nms_th = 0.7
     nms_score_th = 0.5
+
+    fmt = cv2.VideoWriter_fourcc('m','p','4','v')
+    fps = 30
+    size = (cap_width, cap_height)
+    write = cv2.VideoWriter('Cam.mp4', fmt, fps, size)
 
     # カメラ準備 ###############################################################
 
@@ -53,7 +61,7 @@ def main():
         elapsed_time = time.time() - start_time#推論にかかった時間
 
         #fps
-        text = "fps" + "%.0f" % (cap.get(cv2.CAP_PROP_FPS))
+        text = "fps " + "%.0f" % (cap.get(cv2.CAP_PROP_FPS))
         debug_image = cv2.putText(
             debug_image,
             text,
@@ -78,10 +86,11 @@ def main():
         key = cv2.waitKey(1)
         if key == 27:  # ESC
             break
-
+        # 画面保存 ####################################################
+        write.write(debug_image)
         # 画面反映 #########################################################
         cv2.imshow('YOLOX ONNX Sample', debug_image)
-
+    write.release()
     cap.release()
     cv2.destroyAllWindows()
 
