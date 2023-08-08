@@ -110,4 +110,4 @@ def run(model, camera_id, width, height, num_threads,
 
 
 if __name__ == '__main__':
-  run("C:\\SC-16\\Camera\\model_dynamic_range_quant.tflite",0,416,416,1,0)
+  run("yolox_nano_cone_float16.tflite",0,416,416,1,0)
