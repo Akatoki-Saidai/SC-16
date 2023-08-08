@@ -5,7 +5,8 @@ class UltraSound():
     def __init__(self,trigger=Pin(16,Pin.OUT),echo=Pin(17,Pin.IN)):
         self.trigger = trigger#Trig – トリガー 超音波出力用の信号を送信
         self.echo = echo#Echo – エコー 超音波入力用の信号を受信
-
+        self.signalon = 0
+        self.signaloff = 0
     def read_distance(self):
         self.trigger.low()
         utime.sleep_us(2)
@@ -13,10 +14,10 @@ class UltraSound():
         utime.sleep(0.00001)
         self.trigger.low()
         while self.echo.value() == 0:
-            signaloff = utime.ticks_us()
+            self.signaloff = utime.ticks_us()
         while self.echo.value() == 1:
-            signalon = utime.ticks_us()
-        timepassed = signalon - signaloff
+            self.signalon = utime.ticks_us()
+        timepassed = self.signalon - self.signaloff
         distance = (timepassed * 0.0343) / 2
         return distance
 

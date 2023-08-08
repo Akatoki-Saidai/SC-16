@@ -1,7 +1,7 @@
 from machine import Pin
 import utime
 import time
-a = Pin(8,Pin.OUT)
+a = Pin(28,Pin.OUT)
 b = Pin(25,Pin.OUT)
 a.value(0)
 b.value(0)

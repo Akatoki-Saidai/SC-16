@@ -4,15 +4,12 @@ from time import sleep
 import machine
 import time 
 #参考文献：https://tech-and-investment.com/raspberrypi-picow-5-webserver/
-
-#
 # Wi-Fi ルーターのSSIDとパスワードです。
 # お使いの設定に書き換えてください。
-#
 class Socket_rev():
     def __init__(self):
-        self.ssid = 'Xiaomi'
-        self.password = 'KakaCafu04220116'
+        self.ssid = 'Buffalo-G-2CE8'
+        self.password = 'ea8548fsfe4av'
 
     #
     # Wi-Fiに接続する関数です
@@ -41,11 +38,9 @@ class Socket_rev():
             request = request.split()[ 1]
         except IndexError:
             pass
+        self.client.close()
         return (request)
 
-    def server_stop(self):
-        #client.send(html)
-        self.client.close()
     
     #
     # データをやり取りする口(ソケット)を
@@ -74,10 +69,11 @@ class Socket_rev():
             # ソケットを使って、クライアント(ブラウザ)からの接続を待ちます
             # (内部で無限ループ)
             while True:
-                t2 = time.time()
-                print(self.serve(connection))
-                if(t2 - t1 > 100):
-                    self.server_stop()
+                msg = (self.serve(connection))
+                print(type(msg))
+                #msg = msg.split()
+                print(msg)
+                
 
         #
         # プログラムが中断された場合は、この処理に飛び、 
@@ -85,5 +81,6 @@ class Socket_rev():
         #
         except KeyboardInterrupt:
             machine.reset()
-k = Socket_rev()           
-k.main()
+if __name__ == '__main__':
+    k = Socket_rev()           
+    k.main()
